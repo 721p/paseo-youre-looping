@@ -1,15 +1,25 @@
-# Paseo You're Looping
+<h1 align="center">Paseo · You're Looping</h1>
 
-A tiny [Paseo](https://paseo.sh) plugin that adds a **“You're looping”** button to the agent composer.
+<p align="center">
+  A tiny <a href="https://paseo.sh">Paseo</a> plugin that stops a stuck agent and nudges it back on track.
+</p>
 
-When pressed, it:
+<p align="center">
+  <a href="#install"><strong>Install</strong></a> ·
+  <a href="#how-it-works"><strong>How it works</strong></a> ·
+  <a href="#development"><strong>Development</strong></a> ·
+  <a href="#license"><strong>License</strong></a>
+</p>
 
-1. Stops the current agent execution, if one is running.
-2. Sends a new message:
+---
 
-> You're looping
+## Why
 
-That’s it. :)
+Every now and then an agent gets stuck in a loop — repeating the same step, re-reading the same file, going in circles. You can see it happening, and you know exactly what it needs to hear.
+
+**You're looping.**
+
+This plugin puts that nudge one click away. It adds a small pill to the composer that stops the current run and sends the message for you, so you can get back to work instead of typing it out.
 
 ## Install
 
@@ -25,7 +35,7 @@ If your Paseo daemon is password-protected:
 PASEO_PASSWORD="your-password" paseo plugin add 721p/paseo-youre-looping
 ```
 
-## Update
+### Update
 
 ```bash
 paseo plugin update paseo-youre-looping
@@ -37,44 +47,30 @@ For a password-protected daemon:
 PASEO_PASSWORD="your-password" paseo plugin update paseo-youre-looping
 ```
 
-## What it does
+## How it works
 
-The plugin adds a composer pill:
+The plugin adds a composer pill with a repeat icon and a red **X** overlay — *stop the current loop, start a fresh turn*.
 
-**You're looping**
+<p align="center">
+  <img src="./image.png" alt="The You're looping composer pill" width="420" />
+</p>
 
-When clicked, the plugin checks whether the agent currently has an active turn.
+When you click it:
 
-If it does, the plugin stops that execution and then sends:
+1. If the agent has an active turn, the plugin stops the execution.
+2. It sends a new user message:
 
-```text
-You're looping
-```
+   > You're looping
 
-as a fresh user message.
-
-## Icon
-
-The button uses a repeat-style icon with a red **X** overlay to represent:
-
-```text
-stop current loop
-      ↓
-start a new "You're looping" turn
-```
+That's the whole thing. No config, no settings, no ceremony.
 
 ## Development
 
-Clone the repo:
+Clone the repo and install dependencies:
 
 ```bash
 git clone https://github.com/721p/paseo-youre-looping.git
 cd paseo-youre-looping
-```
-
-Install dependencies:
-
-```bash
 npm install
 ```
 
@@ -110,4 +106,4 @@ Do not commit:
 
 ## License
 
-MIT
+[MIT](./LICENSE)
