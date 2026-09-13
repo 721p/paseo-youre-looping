@@ -23,9 +23,21 @@ This plugin puts that nudge one click away. It adds a small pill to the composer
 
 ## Install
 
+Paseo 0.8 and later (the repository root):
+
 ```bash
 paseo plugin add 721p/paseo-youre-looping
 ```
+
+Paseo 0.7 (the [`v0.7/`](./v0.7) subdirectory):
+
+```bash
+paseo plugin add 721p/paseo-youre-looping:v0.7
+```
+
+Paseo 0.7 and 0.8 use incompatible plugin manifests and entry points, so this repository ships
+a build for each: the root is the 0.8 plugin, and `v0.7/` is the 0.7 plugin. Install the one that
+matches your daemon.
 
 Then make sure plugins are enabled in **Paseo → Settings → Plugins**.
 
@@ -74,16 +86,30 @@ cd paseo-youre-looping
 npm install
 ```
 
-Type-check:
+Type-check the Paseo 0.8 plugin (repository root):
 
 ```bash
 npm run typecheck
 ```
 
-Install the local development copy:
+Type-check the Paseo 0.7 plugin (needs its own SDK version):
+
+```bash
+cd v0.7
+npm install
+npm run typecheck
+```
+
+Install the local development copy for Paseo 0.8:
 
 ```bash
 paseo plugin install "$(pwd)"
+```
+
+For Paseo 0.7, install the `v0.7/` subdirectory instead:
+
+```bash
+paseo plugin install "$(pwd)/v0.7"
 ```
 
 After making changes:
