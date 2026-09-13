@@ -1,3 +1,6 @@
 {
-  "id": "paseo-youre-looping"
+  "id": "paseo-youre-looping",
+  "requirements": {
+    "paseo": ">=0.8.0"
+  }
 }

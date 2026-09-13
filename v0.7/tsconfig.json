@@ -4,7 +4,8 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "lib": [
-      "ES2023"
+      "ES2023",
+      "DOM"
     ],
     "jsx": "react-jsx",
     "strict": true,
@@ -16,9 +17,5 @@
   "include": [
     "**/*.ts",
     "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "v0.7"
   ]
 }
